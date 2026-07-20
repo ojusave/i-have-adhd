@@ -32,11 +32,33 @@ codex plugin add i-have-adhd@i-have-adhd
 
 In Codex: use `$i-have-adhd` when you want the output style applied explicitly. The skill can also be invoked implicitly when Codex sees a task that benefits from action-first, ADHD-friendly output.
 
+### Cursor
+
+```bash
+npx skills add ayghri/i-have-adhd
+```
+
+Global: `npx skills add ayghri/i-have-adhd -g`. Cursor-only: `npx skills add ayghri/i-have-adhd -a cursor -y`.
+
+In Cursor Agent: `/i-have-adhd`. Start a new Agent chat after install.
+
+To uninstall: `npx skills remove i-have-adhd` (or `-g` if installed globally).
+
+<details>
+<summary>Manual fallback (clone + copy)</summary>
+
+```bash
+mkdir -p ~/.cursor/skills
+cp -R /path/to/i-have-adhd/skills/i-have-adhd ~/.cursor/skills/
+```
+
+</details>
+
 More in [INSTALL.md](./INSTALL.md).
 
 ## What it does
 
-A Claude Code skill that stops burying the answer. Action first. Steps numbered. No "Hope this helps!"
+A skill for Claude Code, Codex, and Cursor that stops burying the answer. Action first. Steps numbered. No "Hope this helps!"
 
 
 ## What changes
