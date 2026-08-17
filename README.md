@@ -8,57 +8,23 @@
   <a href="LICENSE"><img src="https://img.shields.io/github/license/ayghri/i-have-adhd?style=flat" alt="License"></a>
 </p>
 
+<p align="center">
+  <strong title="English" aria-label="English">🇬🇧</strong> ·
+  <a href=".github/readme/README.zh-CN.md" title="简体中文" aria-label="简体中文">🇨🇳</a> ·
+  <a href=".github/readme/README.pt-BR.md" title="Português (Brasil)" aria-label="Português (Brasil)">🇧🇷</a> ·
+  <a href=".github/readme/README.ja.md" title="日本語" aria-label="日本語">🇯🇵</a> ·
+  <a href=".github/readme/README.vi.md" title="Tiếng Việt" aria-label="Tiếng Việt">🇻🇳</a> ·
+  <a href=".github/readme/README.ko.md" title="한국어" aria-label="한국어">🇰🇷</a>
+</p>
+
 
 ## Install
 
-### Claude Code
-
-```bash
-git clone https://github.com/ayghri/i-have-adhd ./i-have-adhd
-claude plugin marketplace add ./i-have-adhd
-claude plugin install i-have-adhd@i-have-adhd
-```
-
-In Claude Code: `/i-have-adhd`.
-
-To disable: `claude plugin disable i-have-adhd` or use `/plugin disable i-have-adhd` from within CC.
-
-### Codex
-
-```bash
-codex plugin marketplace add ayghri/i-have-adhd --ref main
-codex plugin add i-have-adhd@i-have-adhd
-```
-
-In Codex: use `$i-have-adhd` when you want the output style applied explicitly. The skill can also be invoked implicitly when Codex sees a task that benefits from action-first, ADHD-friendly output.
-
-### Cursor
-
-```bash
-npx skills add ayghri/i-have-adhd
-```
-
-Global: `npx skills add ayghri/i-have-adhd -g`. Cursor-only: `npx skills add ayghri/i-have-adhd -a cursor -y`.
-
-In Cursor Agent: `/i-have-adhd`. Start a new Agent chat after install.
-
-To uninstall: `npx skills remove i-have-adhd` (or `-g` if installed globally).
-
-<details>
-<summary>Manual fallback (clone + copy)</summary>
-
-```bash
-mkdir -p ~/.cursor/skills
-cp -R /path/to/i-have-adhd/skills/i-have-adhd ~/.cursor/skills/
-```
-
-</details>
-
-More in [INSTALL.md](./INSTALL.md).
+🔗 [Installation Instructions](INSTALL.md)
 
 ## What it does
 
-A skill for Claude Code, Codex, and Cursor that stops burying the answer. Action first. Steps numbered. No "Hope this helps!"
+A skill for your coding assistant that stops it from burying the answer. Action first. Steps numbered. No "Hope this helps!"
 
 
 ## What changes
@@ -108,7 +74,16 @@ A skill for Claude Code, Codex, and Cursor that stops burying the answer. Action
 
 ## Tune it
 
-Edit `skills/i-have-adhd/SKILL.md`. Re-invoke `/i-have-adhd`.
+Fork, edit `skills/i-have-adhd/SKILL.md`, then swap your copy in:
+
+```bash
+claude plugin uninstall i-have-adhd            # drop the upstream copy first:
+claude plugin marketplace remove i-have-adhd   # fork and upstream share both names
+claude plugin marketplace add <your-username>/i-have-adhd
+claude plugin install i-have-adhd@i-have-adhd
+```
+
+Restart Claude Code, then re-invoke `/i-have-adhd`.
 
 ## Credits
 
